@@ -1,6 +1,7 @@
 package com.automation.test;
 
 import com.automation.pages.*;
+import com.automation.utils.ConfigReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,7 +22,7 @@ public class OrderConfirmationTest extends BaseTest {
 
         Loginpage loginPage= new Loginpage();
         loginPage.openWebsite();
-        loginPage.doLogin("standard_user","secret_sauce");
+        loginPage.doLogin(ConfigReader.getConfigValue("login.username"), ConfigReader.getConfigValue("login.password"));
 
         HomePage homePage = new HomePage();
         Assert.assertTrue(homePage.isHomePageVisible());
@@ -35,7 +36,7 @@ public class OrderConfirmationTest extends BaseTest {
 
         CheckoutPage checkoutPage = new CheckoutPage();
         Assert.assertTrue(checkoutPage.isCheckoutPageDisplayed());
-        checkoutPage.sendInput("Jesna","Reji","12344");
+        checkoutPage.sendInput(ConfigReader.getConfigValue("shipping.firstname"),ConfigReader.getConfigValue("shipping.lastname"),ConfigReader.getConfigValue("shipping.zipcode"));
         checkoutPage.clickOnContinueButton();
 
         ReviewPage reviewPage = new ReviewPage();
