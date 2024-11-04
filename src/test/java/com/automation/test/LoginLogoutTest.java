@@ -1,6 +1,8 @@
 package com.automation.test;
 
+import com.automation.utils.DriverManager;
 import com.automation.utils.ExcelUtils;
+import io.qameta.allure.Allure;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -12,6 +14,7 @@ public class LoginLogoutTest extends BaseTest {
     public void verifyUserCanLoginWithTheseCredentials(String username, String password){
         loginPage.openWebsite();
         loginPage.doLogin(username,password);
+        Allure.addAttachment("screenshot", DriverManager.takeScreenshotAsInputStream());
         Assert.assertTrue(homePage.isHomePageVisible());
     }
 

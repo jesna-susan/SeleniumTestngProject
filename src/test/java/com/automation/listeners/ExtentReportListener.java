@@ -32,15 +32,15 @@ public class ExtentReportListener implements ITestListener {
     @Override
     public void onTestSuccess(ITestResult result) {
         extentTest.log(Status.PASS, "Test Passed");
-        //extentTest.log(Status.INFO, "Screenshot",
-                //MediaEntityBuilder.createScreenCaptureFromBase64String(DriverManager.takeScreenshotAsBase64()).build());
+        extentTest.log(Status.INFO, "Screenshot",
+                MediaEntityBuilder.createScreenCaptureFromBase64String(DriverManager.takeScreenshotAsBase64()).build());
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
         extentTest.log(Status.PASS, "Test Failed");
-        //extentTest.log(Status.INFO, "Screenshot",
-                //MediaEntityBuilder.createScreenCaptureFromPath(DriverManager.takeScreenshotAsFile()).build());
+        extentTest.log(Status.INFO, "Screenshot",
+                MediaEntityBuilder.createScreenCaptureFromPath(DriverManager.takeScreenshotAsFile()).build());
     }
 
     @Override

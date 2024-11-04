@@ -22,28 +22,28 @@ public class DriverManager {
         return driver;
     }
 
-//    public static ByteArrayInputStream takeScreenshotAsInputStream() {
-//        TakesScreenshot ts = (TakesScreenshot) DriverManager.getDriver();
-//        byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
-//        return new ByteArrayInputStream(screenshot);
-//    }
-//
-//    public static String takeScreenshotAsBase64() {
-//        TakesScreenshot ts = (TakesScreenshot) DriverManager.getDriver();
-//        String screenshot = ts.getScreenshotAs(OutputType.BASE64);
-//        return screenshot;
-//    }
-//
-//    public static String takeScreenshotAsFile() {
-//        TakesScreenshot ts = (TakesScreenshot) DriverManager.getDriver();
-//        File screenshot = ts.getScreenshotAs(OutputType.FILE);
-//        String screenshotFolderPath = "report/";
-//        String screenshotName = "screenshot.png";
-//        try {
-//            FileUtils.copyFile(screenshot, new File(screenshotFolderPath + screenshotName));
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-//        return screenshotName;
-//    }
+    public static ByteArrayInputStream takeScreenshotAsInputStream() {
+        TakesScreenshot ts = (TakesScreenshot) DriverManager.getDriver();
+        byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
+        return new ByteArrayInputStream(screenshot);
+    }
+
+    public static String takeScreenshotAsBase64() {
+        TakesScreenshot ts = (TakesScreenshot) DriverManager.getDriver();
+        String screenshot = ts.getScreenshotAs(OutputType.BASE64);
+        return screenshot;
+    }
+
+    public static String takeScreenshotAsFile() {
+        TakesScreenshot ts = (TakesScreenshot) DriverManager.getDriver();
+        File screenshot = ts.getScreenshotAs(OutputType.FILE);
+        String screenshotFolderPath = "report/";
+        String screenshotName = "screenshot.png";
+        try {
+            FileUtils.copyFile(screenshot, new File(screenshotFolderPath + screenshotName));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return screenshotName;
+    }
 }
