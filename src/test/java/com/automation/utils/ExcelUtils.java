@@ -35,7 +35,7 @@ public class ExcelUtils {
     public List<List<String>> getData() {
         List<List<String>> tableData = new ArrayList<>();
 
-        for (int i = 1; i < getTotalNumOfRow() +1; i++) {
+        for (int i = 1; i < getTotalNumOfRow()+1; i++) {
             XSSFRow row = sheet.getRow(i);
             List<String> rowData = new ArrayList<>();
             for (int j = 0; j < row.getLastCellNum(); j++) {

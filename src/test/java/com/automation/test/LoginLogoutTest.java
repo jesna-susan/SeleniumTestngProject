@@ -1,15 +1,12 @@
 package com.automation.test;
 
-import com.automation.pages.Loginpage;
-import com.automation.utils.ConfigReader;
 import com.automation.utils.ExcelUtils;
 import org.testng.Assert;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class DataProvider extends BaseTest {
+public class LoginLogoutTest extends BaseTest {
 
     @Test(dataProvider = "getValidCredentials")
     public void verifyUserCanLoginWithTheseCredentials(String username, String password){
