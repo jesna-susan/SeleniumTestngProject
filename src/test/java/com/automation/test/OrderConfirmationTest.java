@@ -50,5 +50,27 @@ public class OrderConfirmationTest extends BaseTest {
 
     }
 
+    @Test
+    public void loginLogoutTest(){
+        Loginpage loginPage= new Loginpage();
+        loginPage.openWebsite();
+        loginPage.doLogin(ConfigReader.getConfigValue("login.username"), ConfigReader.getConfigValue("login.password"));
+
+        HomePage homePage = new HomePage();
+        Assert.assertTrue(homePage.isHomePageVisible());
+        homePage.clickOnAddToCartIcon();
+        Assert.assertTrue(homePage.isCartIconOne());
+        homePage.clickOnHamburger();
+        homePage.clickOnLogout();
+
+        Assert.assertTrue(loginPage.isLoginPage());
+        loginPage.doLogin(ConfigReader.getConfigValue("login.username"), ConfigReader.getConfigValue("login.password"));
+        Assert.assertTrue(homePage.isHomePageVisible());
+        Assert.assertTrue(homePage.isCartIconOne());
+
+
+
+    }
+
 
 }

@@ -28,5 +28,9 @@ public class Loginpage extends BasePage{
        driver.get(ConfigReader.getConfigValue("application.url"));
     }
 
+    public boolean isLoginPage(){
+        return loginBtn.isDisplayed();
+    }
+
 
 }
